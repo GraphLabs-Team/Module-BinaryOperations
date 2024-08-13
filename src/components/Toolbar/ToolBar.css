@@ -1,0 +1,45 @@
+.Title {
+    font-size: 100%;
+}
+
+button {
+    height: 50px;
+    width: 100%;
+}
+
+div.toolButtonList {
+    padding: 5px;
+}
+
+button.toolButton {
+    margin-top: 5px;
+    border-radius: 30px;
+    overflow: hidden;
+
+}
+
+button.helpButton {
+    border-radius: 30px;
+    overflow: hidden;
+    font-size: medium;
+}
+
+input.colorInput {
+    margin-top: 5px;
+    width: 175px;
+    height: 40px;
+}
+
+div.footerButtonsList {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+button.compleateButton {
+    border-radius: 10px;
+    background-color: green;
+    overflow: hidden
+}
+
