@@ -1,0 +1,113 @@
+.App {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.MainRow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80%;
+}
+
+.BorderedDiv {
+  border-radius: 10px;
+  background: #fffaf0;
+}
+
+.GraphCell {
+  border: black;
+  border-radius: 10px;
+  background-color: #ebf2fa;
+  position: fixed;
+  left: 15%;
+  top: 1%;
+  width: 62%;
+  height: 98%;
+}
+
+.ToolCell {
+  border-radius: 10px;
+  background-color: #ebf2fa;
+  position: fixed;
+  left: 1%;
+  top: 1%;
+  width: 12%;
+  height: 87%;
+}
+
+.TaskCellGraph {
+  border-radius: 10px;
+  background-color: #ebf2fa;
+  position: fixed;
+  left: 79%;
+  top: 20%;
+  width: 20%;
+  height: 79%;
+}
+
+.TaskCell {
+  border-radius: 10px;
+  background-color: #ebf2fa;
+  position: fixed;
+  left: 79%;
+  top: 1%;
+  width: 20%;
+  height: 18%;
+}
+
+.TaskCell-full-height {
+  height: 100vh;
+}
+
+.LeftBottom {
+  border-radius: 10px;
+  border-color: black;
+  background-color: #ebf2fa;
+  position: fixed;
+  left: 1%;
+  top: 89%;
+  width: 12%;
+  height: 10%;
+  text-align: center;
+}
+
+table {
+  margin: 10% auto;
+  width: 80%;
+  border-collapse: collapse;
+  border: 2px solid #78c7ff;
+  border-radius: 10px;
+}
+
+td, th {
+  padding: 10px;
+  border: 2px solid #78c7ff;
+}
+
+th {
+  background-color: #d1e8ff;
+}
+
+td:not(:last-child), th:not(:last-child) {
+  border-right: 1px solid #78c7ff;
+}
+
+tr:not(:last-child) td, tr:not(:last-child) th {
+  border-bottom: 1px solid #78c7ff;
+}
+
+tr:first-child td, tr:first-child th {
+  border-top: 1px solid #78c7ff;
+}
+
+.TaskCell p {
+  margin-left:5%
+}
+
+
+
