@@ -143,7 +143,7 @@ export default function Matrix(props: MatrixType) {
               <Row
                 id={row_i}
                 matrixId={props.id}
-                vector={res_vect}
+                vector={res_vect.map((val) => val === "1" ? "1" : val === "0" ? "" : val)}
                 has_index={true}
                 clickHandler={(cellId: number, rowId: number) => {
                   if (!props.disableCellClick)
@@ -156,7 +156,7 @@ export default function Matrix(props: MatrixType) {
               <Row
                 id={row_i}
                 matrixId={props.id}
-                vector={vector}
+                vector={res_vect.map((val) => val === "1" ? "1" : val === "0" ? "" : val)}
                 has_index={false}
                 clickHandler={(cellId: number, rowId: number) => {
                   if (!props.disableCellClick)

@@ -19,7 +19,7 @@ export class ModuleExample<T1, T2> extends Template<T1, T2> {
 
     protected task_matrix() {
       let n1_vertex = 2;
-      let n2_vertex = 3;
+      let n2_vertex = 7;
       let task_graph: Graph<T1, T2> = GraphGenerator.random2components(n1_vertex, n2_vertex, 0.3);
       let matrix_1: number[][] = Array(n1_vertex).fill([]).map(() => Array(n1_vertex).fill(0))
       let matrix_2: number[][] = Array(n2_vertex).fill([]).map(() => Array(n2_vertex).fill(0))
@@ -35,7 +35,7 @@ export class ModuleExample<T1, T2> extends Template<T1, T2> {
           matrix_2[source_id - n1_vertex][target_id - n1_vertex] = 1
         }
       })
-      let names_1: string[] = Array(n1_vertex).fill("0").map((val, i) => i + "")
+      let names_1: string[] = Array(n1_vertex).fill("0").map((val, i) => i + 1 + "")
       const properMatrix_1 = matrix_1.map((row) => row.map((item) => item + ""));
       let names_2: string[] = Array(n2_vertex).fill("0").map((val, i) => i - 1 + n1_vertex + "")
       const properMatrix_2 = matrix_2.map((row) => row.map((item) => item + ""));
