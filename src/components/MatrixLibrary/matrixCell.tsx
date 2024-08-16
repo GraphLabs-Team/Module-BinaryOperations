@@ -1,6 +1,5 @@
-import React from "react";
-import "./matrixCell.css"
-
+import React, { useState } from "react";
+import "./matrixCell.css";
 
 type CellProps = {
     id: number;
@@ -8,18 +7,34 @@ type CellProps = {
     matrixId: string;
     value: string;
     clickHandler: (cellId: number, rowId: number) => void;
-    className?: string;  // Добавляем необязательное свойство className
+    onDoubleClick: (cellId: number, rowId: number) => void; // Новый обработчик двойного клика
+    className?: string;
 }
 
 export function Cell(props: CellProps) {
+    const [isHighlighted, setIsHighlighted] = useState(false);
+
+    const handleDoubleClick = () => {
+        setIsHighlighted(!isHighlighted);
+        props.onDoubleClick(props.id, props.rowId); // Вызов нового обработчика двойного клика
+    };
+
     let cell_id = "matrix-" + props.matrixId + "-row-" + props.rowId.toString() + "-cell-" + props.id.toString();
     let button_id = "matrix-" + props.matrixId + "-row-" + props.rowId.toString() + "-cell-" + props.id.toString() + "-button";
+
+    let sim_cell_id = "matrix-" + props.matrixId + "-row-" + (props.id - 1).toString() + "-cell-" + props.id.toString();
+
     return (
         <div id={cell_id} className={`cell ${props.className ?? ""}`}>
-            <button 
-                id={button_id} 
-                className="cell-button" 
-                onClick={() => props.clickHandler(props.id, props.rowId)}>{props.value}</button>
+            <button
+                id={button_id}
+                className={`cell-button ${isHighlighted ? "highlighted-number" : ""}`}
+                onClick={() => props.clickHandler(props.id, props.rowId)}
+                onDoubleClick={handleDoubleClick}
+            >
+                {props.value}
+            </button>
+
         </div>
     );
 }
@@ -30,7 +45,7 @@ type LabelCellProps = {
     matrixId: string;
     value: string;
     clickHandler: (cellId: number, rowId: number) => void;
-    className?: string;  // Добавляем необязательное свойство className
+    className?: string;
 }
 
 export function LabelCell(props: LabelCellProps) {
@@ -38,11 +53,13 @@ export function LabelCell(props: LabelCellProps) {
     let button_id = "matrix-" + props.matrixId + "-row-" + props.rowId.toString() + "-cell-" + props.id.toString() + "-button";
     return (
         <div id={cell_id} className={`cell ${props.className ?? ""}`}>
-            <button 
-                id={button_id} 
-                className="cell-button" 
+            <button
+                id={button_id}
+                className="cell-button"
                 disabled={true}
-                onClick={() => props.clickHandler(props.id, props.rowId)}>{props.value}</button>
+                onClick={() => props.clickHandler(props.id, props.rowId)}>
+                {props.value}
+            </button>
         </div>
     );
 }

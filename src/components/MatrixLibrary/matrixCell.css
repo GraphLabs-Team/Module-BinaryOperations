@@ -3,6 +3,10 @@
     border-radius: 5px;
 }
 
+.highlighted-number {
+    color: red; /* Изменение цвета цифры на красный */
+}
+
 div.cell{
     width: 40px;
     height: 40px;
