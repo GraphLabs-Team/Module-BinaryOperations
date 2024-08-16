@@ -12,23 +12,26 @@ type CellProps = {
 }
 
 export function Cell(props: CellProps) {
-    const [isHighlighted, setIsHighlighted] = useState(false);
 
     const handleDoubleClick = () => {
-        setIsHighlighted(!isHighlighted);
-        props.onDoubleClick(props.id, props.rowId); // Вызов нового обработчика двойного клика
+        const thisButton = document.getElementById(button_id)
+        const symmetricalButton = document.getElementById(sym_button_id);
+
+        thisButton?.classList.toggle("highlighted-number")
+        symmetricalButton?.classList.toggle("highlighted-number")
+
     };
 
     let cell_id = "matrix-" + props.matrixId + "-row-" + props.rowId.toString() + "-cell-" + props.id.toString();
     let button_id = "matrix-" + props.matrixId + "-row-" + props.rowId.toString() + "-cell-" + props.id.toString() + "-button";
 
-    let sim_cell_id = "matrix-" + props.matrixId + "-row-" + (props.id - 1).toString() + "-cell-" + props.id.toString();
+    let sym_button_id = "matrix-" + props.matrixId + "-row-" + (props.id - 1).toString() + "-cell-" + (props.rowId + 1).toString() + "-button";
 
     return (
         <div id={cell_id} className={`cell ${props.className ?? ""}`}>
             <button
                 id={button_id}
-                className={`cell-button ${isHighlighted ? "highlighted-number" : ""}`}
+                className={`cell-button `}
                 onClick={() => props.clickHandler(props.id, props.rowId)}
                 onDoubleClick={handleDoubleClick}
             >
