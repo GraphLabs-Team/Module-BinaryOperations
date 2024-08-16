@@ -5,7 +5,6 @@ div.matrix {
     align-items: flex-start; /* Выравниваем элементы по левому краю */
 }
 
-
 div.matrix div {
     background-color: #fff;
     border: 1px solid transparent;

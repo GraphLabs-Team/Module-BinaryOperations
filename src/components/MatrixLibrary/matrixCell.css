@@ -1,7 +1,11 @@
 .highlighted .cell-button {
     background-color: rgb(242, 242, 242); /* Светло-серый фон для диагональных ячеек, первой строки и первого столбца */
+    border-radius: 5px;
 }
 
+.highlighted-number {
+    color: red; /* Изменение цвета цифры на красный */
+}
 
 div.cell{
     width: 40px;
@@ -17,6 +21,8 @@ button.cell-button{
     font-size: 18px;
     padding: 0px;
     background-color: white;
-    border: 2px solid #ddd; 
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
